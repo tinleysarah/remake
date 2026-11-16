@@ -1,0 +1,41 @@
+{
+  "environment": "Claude desktop app browser pane against python3 -m http.server on localhost:8765, 2026-11-16",
+  "checks": {
+    "desktop_no_horizontal_scroll": {
+      "result": "pass",
+      "detail": "all 13 pages measured at 1280 px and 768 px wide; document scroll width equals viewport width, no element extends past the right edge"
+    },
+    "phone_no_horizontal_scroll": {
+      "result": "pass",
+      "detail": "all 13 pages measured at 375 px wide; no overflow, every image placeholder has a real height"
+    },
+    "no_console_errors": {
+      "result": "pass",
+      "detail": "all 13 pages loaded in turn; no script errors or failed requests (a favicon 404 found on the first pass was fixed by adding assets/favicon.svg)"
+    },
+    "web_fonts_load": {
+      "result": "pass",
+      "detail": "Marcellus and EB Garamond reported as loaded on all 13 pages"
+    },
+    "mobile_menu_toggles": {
+      "result": "pass",
+      "detail": "at 375 px the Menu button opens the nav (8 links visible, aria-expanded true) and closes it again"
+    },
+    "recipes_dropdown_opens": {
+      "result": "pass",
+      "detail": "at 1280 px the Recipes submenu appears on hover and on keyboard focus"
+    },
+    "faq_opens_and_closes": {
+      "result": "pass",
+      "detail": "clicking the first FAQ question opens only that answer; clicking again closes it"
+    },
+    "forms_validate_and_confirm": {
+      "result": "pass",
+      "detail": "contact form refuses empty and invalid-email submissions, then shows its not-connected notice and clears; newsletter sign-up shows its notice; nothing is sent and the URL does not change"
+    },
+    "content_and_navigation_work_without_javascript": {
+      "result": "pass",
+      "detail": "9 pages loaded with scripts blocked at 375 px and 1280 px; all content present and the nav is visible without the Menu button. The two demo forms rely on JavaScript for their notice."
+    }
+  }
+}
